@@ -1,0 +1,1 @@
+print("NOT EMPTY" if (obj := eval(input())) else "EMPTY")
