@@ -1,0 +1,1 @@
+print( ( l := eval(input()) )[-1:len(l)//2 - 1: -2])
