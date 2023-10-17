@@ -1,0 +1,37 @@
+4
+In this paper, we consider periodic tasks in which the relative deadline of a task is equal
+to its period, and the first instance of each periodic task is released at time 0. Table I lists
+the task parameters used in this paper. A periodic task T
+[k] has period P
+[k]
+and worst case
+execution time WCET[k]
+. The execution of T
+[k]
+requires one or more devices. We define
+this set of devices as Φ[k]
+. The optimal scaling factor that minimizes the system energy
+consumption while executing T
+[k]
+is θ
+[k]
+. All task execution times are defined according to
+the highest frequency of the DVS processor.
+There are multiple instances of each task, and each instance has the same worst case
+execution time and period, but has different arrival time, deadline and actual execution
+time. To make the notation simple, we relabel all task instances in the scheduling profile
+by label J indexed by a number indicating the order of execution. For instance, in Fig 2,
+task J1 is the first instance of T
+[1]
+, J2 is the first instance of T
+[2]
+, J3 is the second instance of
+T
+[1]
+, etc. J2 is preempted by task J3 and resumes after J3 finishes; the resumed part is still
+deemed as part of J2 and not given a new label. Since task J3 is the second instance of task
+T
+[1]
+, its period is P3 = 2min, WCET3 = 0.85min, arrival time is ai = 2min and deadline is
+di = 4min.
+

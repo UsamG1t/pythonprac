@@ -1,0 +1,16 @@
+10
+Abstract—In this paper, we propose variable voltage task scheduling
+algorithms that minimize energy or minimize peak power for the case
+when the task arrival times, deadline times, execution times, periods,
+and switching activities are given. We consider aperiodic (earliest due
+date, earliest deadline first), as well as periodic (rate monotonic, earliest
+deadline first) scheduling algorithms. We use the Lagrange multiplier
+method to theoretically determine the relation between the task voltages
+such that the energy or peak power is minimum, and then develop an
+iterative algorithm that satisfies the relation. The asymptotic complexity of
+the existing scheduling algorithms change very mildly with the application
+of the proposed algorithms. We show experimentally (random experiments
+as well as real-life cases), that the voltage assignment obtained by the
+proposed low-complexity algorithm is very close to that of the optimal
+energy (0.1% error) and optimal peak power (1% error) assignment.
+

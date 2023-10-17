@@ -1,0 +1,15 @@
+6
+Dynamic voltage scaling (DVS) is a well-known low power design
+technique that reduces the processor energy by slowing down the
+DVS processor and stretching the task execution time. But in a
+DVS system consisting of a DVS processor and multiple devices,
+slowing down the processor increases the device energy consumption and thereby the system-level energy consumption. In this paper, we present dynamic task scheduling algorithms for periodic
+tasks that minimize the system-level energy (CPU energy + device
+standby energy). The algorithms use a combination of (i) optimal
+speed setting, which is the speed that minimizes the system energy for a specific task, and (ii) limited preemption which reduces
+the numbers of possible preemptions. For the case when the CPU
+power and device power are comparable, these algorithms achieve
+up to 43% energy savings compared to [1], but only up to 12% over
+the non-DVS scheduling. If the device power is large compared to
+the CPU power, we show that DVS should not be employed.
+
