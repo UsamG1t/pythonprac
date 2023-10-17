@@ -1,0 +1,7 @@
+:print print()
+:digit x y sin(x)-y
+digit 3 4
+print
+print
+digit 5 5
+quit "{}<>{}"

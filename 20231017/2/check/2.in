@@ -1,0 +1,7 @@
+:limb d d%37
+limb 37
+limb 48
+:island a b c d a/b+b/c+c/d+d/a
+island 1 2 3 4
+:not_used q w e r t y u i o p "Hello,world"
+quit "{} - {}"

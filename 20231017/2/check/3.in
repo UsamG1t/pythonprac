@@ -1,0 +1,6 @@
+:Many_to_zero a b c d e f 0
+Many_to_zero 1 2 3 4 5 6
+Many_to_zero 1 2 3 4 5 6
+Many_to_zero 1 2 3 4 5 6
+Many_to_zero 1 2 3 4 5 6
+quit "{}{}"
