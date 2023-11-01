@@ -1,0 +1,6 @@
+r1, r2 = Omnibus(), Omnibus()
+del r2.not_used
+r2.a = r2.b = r1.a = True
+r1.c = False
+print(r1.a, r1.a, r1.c)
+del r1.a, r2.a, r2.b, r2.c

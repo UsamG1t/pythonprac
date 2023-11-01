@@ -1,0 +1,10 @@
+fst, snd, trd = Omnibus(), Omnibus(), Omnibus()
+fst.fst = snd.snd = trd.trd = 0
+fst.snd = snd.trd = trd.fst = max
+fst.fst = snd.fst = trd.fst = 42
+print(fst.fst, fst.snd, fst.trd, snd.fst, snd.snd, snd.trd, trd.fst, trd.snd, trd.trd, sep = "")
+del fst.snd, snd.snd, trd.snd
+print(fst.fst, fst.snd, fst.trd, snd.fst, snd.snd, snd.trd, trd.fst, trd.snd, trd.trd, sep = "")
+del fst.not_used
+fst.trd = snd.trd = trd.trd = 'qwerty'
+print(fst.fst, fst.snd, fst.trd, snd.fst, snd.snd, snd.trd, trd.fst, trd.snd, trd.trd, sep = "")
