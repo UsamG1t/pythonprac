@@ -7,3 +7,6 @@ def slide(seq, n):
         yield from islice(dup[0], pos, pos + n)
         dup = tee(dup[1])
         pos += 1
+
+import sys
+exec(sys.stdin.read())

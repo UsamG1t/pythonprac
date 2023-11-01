@@ -1,1 +1,2 @@
-print(*list(slide(chain([range(10), range(15, 5, -1)]), 8)))
+from itertools import chain
+print(*list(slide(chain([*range(10), *range(15, 5, -1)]), 8)))

@@ -1,1 +1,2 @@
+from itertools import takewhile, dropwhile, count
 print(*list(slide(takewhile(lambda x: x < 100, dropwhile(lambda x: x < 30, count(1))), 20)))
