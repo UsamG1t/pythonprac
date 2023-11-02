@@ -3,8 +3,9 @@ class Omnibus:
     names = []
 
     def __setattr__(self, name, value):
-        self.__class__.d[name] = self.__class__.d.setdefault(name, 0) + 1
-        self.names.append((name, id(self)))
+        if (name, id(self)) not in self.names:
+            self.__class__.d[name] = self.__class__.d.setdefault(name, 0) + 1
+            self.names.append((name, id(self)))
 
     def __getattr__(self, name):
         if (name, id(self)) in self.names:

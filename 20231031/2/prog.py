@@ -5,11 +5,12 @@ class Triangle:
         self.dot3 = tuple(dot3)
 
     def __abs__(self):
-        return round(0.5 * abs( (self.dot2[0] - self.dot1[0])*\
+        res = round(0.5 * abs( (self.dot2[0] - self.dot1[0])*\
                                 (self.dot3[1] - self.dot1[1]) -\
                                 (self.dot3[0] - self.dot1[0])*\
                                 (self.dot2[1] - self.dot1[1]) ), 3)
-
+        return res if res else 0
+        
     def __bool__(self):
         return abs(self) != 0
 
