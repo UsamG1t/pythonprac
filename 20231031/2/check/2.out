@@ -1,0 +1,4 @@
+a(True):168.0 b(True):134.0 c(True):167.0 d(True):40.0
+a < a = False, b < b = False, c < c = False, d < d = False
+a in b =False, b in c =False, c in d =False
+d & a = True, c & b = False, b & c = False, a & d = True

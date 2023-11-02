@@ -1,0 +1,6 @@
+a = Triangle((1, 2), (3, 4), (5, 6))
+b = Triangle((-100, -7), (-11, 103), (13, -2))
+print(abs(a), abs(b), sep = '---')
+print(a > b, b & a, a in b, bool(a))
+print(a > b if (a in b and a) else b & a)
+print(a > b if (a & b and a) else b in a)
