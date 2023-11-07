@@ -1,3 +1,4 @@
 *~
 *.res
 tester.py
+__pycache__
