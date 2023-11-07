@@ -1,0 +1,1 @@
+print(DivStr() + "-".join(list(map(str, DivStr('aqswde') // 6))), DivStr('zxcvbn') % 4)
