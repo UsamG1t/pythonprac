@@ -1,0 +1,16 @@
+@objcount
+class A:
+    val = None
+    def __init__(self, val = None):
+        if val:
+            self.val = val
+
+    def __del__(self):
+        print(f"QQ{self.val if isinstance(self.val, int) else 0}")
+
+
+
+a, b, c = A(), A(A(5)), A(12)
+print('~', A.counter)
+del b
+print('~~', A.counter)
