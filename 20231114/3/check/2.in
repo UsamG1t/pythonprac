@@ -1,0 +1,26 @@
+from timeit import timeit
+from string import ascii_lowercase
+
+alp = Alpha()
+alq = AlphaQ()
+alpword = alqword = 0
+
+alpt = timeit("""
+alpword = 0
+for i in set(list(ascii_lowercase) + list( ''.join(item) for item in zip(ascii_lowercase, ascii_lowercase) ) ):
+    try:
+        setattr(alp, i, i)
+    except AttributeError:
+        alpword += 1
+""", number = 200000, globals = globals())
+
+alqt = timeit("""
+alqword = 0
+for i in set(list(ascii_lowercase) + list( ''.join(item) for item in zip(ascii_lowercase, ascii_lowercase) ) ):
+    try:
+        setattr(alp, i, i)
+    except AttributeError:
+        alqword += 1
+""", number = 200000, globals = globals())
+
+print(alpt < alqt)

@@ -1,0 +1,21 @@
+from timeit import timeit
+from string import ascii_lowercase
+
+letters = [ascii_lowercase[i] for i in range(26) if i % 3]
+
+alp = Alpha(b = -5, c = -4, e = -1, f = 4, h = 11, i = 20, k = 31, l = 44, n = 59, o = 76, q = 95, r = 116, t = 139, u = 164, w = 191, x = 220, z = 251)
+alq = AlphaQ(b = -5, c = -4, e = -1, f = 4, h = 11, i = 20, k = 31, l = 44, n = 59, o = 76, q = 95, r = 116, t = 139, u = 164, w = 191, x = 220, z = 251)
+
+alpt = timeit("""
+for i in range(123):
+    a = getattr(alp, letters[i**2 % 17])
+    b = getattr(alp, letters[(i+365) % 17])
+""", number=100, globals = globals())
+
+alqt = timeit("""
+for i in range(123):
+    a = getattr(alq, letters[i**2 % 17])
+    b = getattr(alq, letters[(i+365) % 17])
+""", number=100, globals = globals())
+
+print(alpt < alqt)

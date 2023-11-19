@@ -1,0 +1,23 @@
+from timeit import timeit
+from string import ascii_letters, digits
+
+alp = Alpha()
+alq = AlphaQ()
+
+alpt = timeit("""
+for i in (ascii_letters + digits):
+    try:
+        alp = Alpha(**{i: i})
+    except AttributeError:
+        pass
+""", number = 100000, globals = globals())
+
+alqt = timeit("""
+for i in (ascii_letters + digits):
+    try:
+        alq = AlphaQ(**{i: i})
+    except AttributeError:
+        pass
+""", number = 100000, globals = globals())
+
+print(alpt < alqt)
