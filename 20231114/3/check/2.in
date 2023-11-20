@@ -18,7 +18,7 @@ alqt = timeit("""
 alqword = 0
 for i in set(list(ascii_lowercase) + list( ''.join(item) for item in zip(ascii_lowercase, ascii_lowercase) ) ):
     try:
-        setattr(alp, i, i)
+        setattr(alq, i, i)
     except AttributeError:
         alqword += 1
 """, number = 200000, globals = globals())
