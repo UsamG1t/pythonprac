@@ -1,0 +1,43 @@
+class Doubleton(type, metaclass=dump):
+    __abstractmethods__ = None
+    _instance = []
+    _count = 1
+    def __call__(cls, *args, **kw):
+        if len(cls._instance) < 2:
+            cls._instance.append(super().__call__(*args, **kw))
+        cls._count = 1-cls._count;
+        return cls._instance[cls._count]
+
+class D(metaclass=Doubleton):
+    def __init__(self, val, *args, **kwargs):
+        self.val = val*2
+        
+    def __str__(self):
+        return f'<([{self.val}])>'
+
+class C(metaclass=dump):
+    def __init__(self, val, *args, **kwargs):
+        self.val = val*2
+        
+    def __str__(self):
+        return f'<([{self.val}])>'
+
+
+a, b, c, d = C(10), C(15, 'QQ'), C(parameter = "World", val='Hello'), C(16, (2, 3, 4), {'u': 'Amazing'})
+a1, b1, c1, d1 = D(10), D(15, 'QQ'), D(parameter = "World", val='Hello'), D(16, (2, 3, 4), {'u': 'Amazing'})
+
+print(a)
+print(b)
+print(c)
+print(d)
+
+print(repr(a) == repr(c))
+print(repr(b) == repr(d))
+
+print(a1)
+print(b1)
+print(c1)
+print(d1)
+
+print(repr(a1) == repr(c1))
+print(repr(b1) == repr(d1))

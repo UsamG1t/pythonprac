@@ -1,0 +1,9 @@
+__init__: (10,), {}
+__init__: (15, 'QQ'), {}
+__init__: (), {'parameter': 'World', 'val': 'Hello'}
+__str__: (), {}
+<([0 - False])>
+__str__: (), {}
+<([QQ - False])>
+__str__: (), {}
+<([World - False])>

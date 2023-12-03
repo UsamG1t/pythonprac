@@ -1,0 +1,32 @@
+prepare
+new
+init
+prepare
+new
+init
+call
+call
+__init__: (10,), {}
+__init__: (15, 'QQ'), {}
+__init__: (), {'parameter': 'World', 'val': 'Hello'}
+__init__: (16, (2, 3, 4), {'u': 'Amazing'}), {}
+__str__: (), {}
+<([20])>
+__str__: (), {}
+<([30])>
+__str__: (), {}
+<([HelloHello])>
+__str__: (), {}
+<([32])>
+False
+False
+<([20])>
+<([30])>
+<([20])>
+<([30])>
+True
+True
+<([20])>
+<([30])>
+<([HelloHello])>
+<([32])>
