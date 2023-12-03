@@ -1,0 +1,21 @@
+Эта программа написана без единого Ифа. Потому что мы можем, Морти
+
+store 12345 a
+store 10 divider
+store 1 ch1
+store 10000 ch2
+
+add a tmp tmp
+loop:
+div tmp divider tmp
+iflt tmp divider no_print
+out tmp
+no_print:
+ifgt tmp ch1 loop
+
+sub a ch2 a
+
+    mul a divider a
+    add a tmp a
+out a
+stop

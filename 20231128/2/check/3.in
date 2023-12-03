@@ -1,0 +1,18 @@
+store 10 border
+store 0 NULL
+store 0.99 step
+store 1 b
+store 0.123456789 divider
+
+fib:
+    add a b tmp
+    add b NULL a
+    add tmp NULL b
+    out a
+    out b
+    out divider
+    ifle border divider stopper
+    sub border step border
+    ifge border NULL fib
+stopper:
+    out divider out border out step stop
