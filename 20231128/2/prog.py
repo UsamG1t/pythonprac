@@ -1,39 +1,39 @@
 from math import inf
 import sys
-text = sys.stdin.read().split()
 
 tags = {}
 Approved_tags = []
 code = []
 
-for i in range(len(text)):
-    match text[i]:
-        case 'store':
-            code.append(' '.join(text[i:i+3]))
-            i += 2
-
-        case 'add' | 'sub' | 'mul' | 'div':
-            code.append(' '.join(text[i:i+4]))
-            i += 3
-
-        case 'ifeq' | 'ifne' | 'ifgt' | 'ifge' | 'iflt' | 'ifle':
-            Approved_tags.append(text[i+3])
-            code.append(' '.join(text[i:i+4]))
-            i += 3
-
-        case 'out':
-            code.append(' '.join(text[i:i+2]))
-            i += 1
-
-        case 'stop':
-            code.append(text[i])
-
-        case word:
+def matcher(words):
+    match words:
+        case ['store', value, var]:
+            code.append(' '.join(words))
+        
+        case ['add' | 'sub' | 'mul' | 'div', src, operand, dst]:
+            code.append(' '.join(words))
+    
+        case ['ifeq' | 'ifne' | 'ifgt' | 'ifge' | 'iflt' | 'ifle', \
+                src, operand, tag]:
+            Approved_tags.append(tag)
+            code.append(' '.join(words))
+            
+        case ['out', var]:
+            code.append(' '.join(words))
+        
+        case ['stop']:
+            code.append(' '.join(words))
+        
+        case [word, *args]:
             match word[-1]:
                 case ':':    
-                    tags[text[i][:-1]] = len(code)
-    i += 1
+                    tags[word[:-1]] = len(code)
+                    matcher(list(*args))
+    
 
+while (text := sys.stdin.readline()):
+    words = text.split()
+    matcher(words)
 
 match len(Approved_tags) != len(set(Approved_tags)):
     case True:
