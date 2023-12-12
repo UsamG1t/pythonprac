@@ -4,7 +4,7 @@ class Maze():
         self.connections = {}
         for i in range(size):
             for j in range(size):
-                self.connections[(i, j)] = []
+                self.connections[(i, j)] = set()
     def __setitem__(self, key, value):
         x1, y1, x2, y2 = key[0], key[1].start, key[1].stop, key[2]
         
@@ -12,8 +12,8 @@ class Maze():
             for j in range(min(y1, y2), max(y1, y2)):
                 if value == '·':
                     if (x1, j+1) not in self.connections[(x1, j)]:
-                            self.connections[(x1, j)].append((x1, j+1))
-                            self.connections[(x1, j+1)].append((x1, j))
+                            self.connections[(x1, j)].add((x1, j+1))
+                            self.connections[(x1, j+1)].add((x1, j))
                 elif value == '█':
                     if (x1, j+1) in self.connections[(x1, j)]:
                             self.connections[(x1, j)].remove((x1, j+1))
@@ -22,8 +22,8 @@ class Maze():
             for i in range(min(x1, x2), max(x1, x2)):
                 if value == '·':
                     if (i+1, y1) not in self.connections[(i, y1)]:
-                            self.connections[(i, y1)].append((i+1, y1))
-                            self.connections[(i+1, y1)].append((i, y1))
+                            self.connections[(i, y1)].add((i+1, y1))
+                            self.connections[(i+1, y1)].add((i, y1))
                 elif value == '█':
                     if (i+1, y1) in self.connections[(i, y1)]:
                             self.connections[(i, y1)].remove((i+1, y1))

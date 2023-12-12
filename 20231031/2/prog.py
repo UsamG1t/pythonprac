@@ -34,6 +34,7 @@ class Triangle:
 
     def __and__(self, other):
         if not self or not other:
+            print('Daaaamn')
             return False
         for x, y in [(self.dot1, self.dot2), \
                         (self.dot2, self.dot3), \
@@ -50,9 +51,15 @@ class Triangle:
 
                 if ((u[0]*a + b - u[1]) > 0) != ((v[0]*a + b - v[1]) > 0) and\
                     ((x[0]*c + d - x[1]) > 0) != ((y[0]*c + d - y[1]) > 0):
+                    print( (u[0]*a + b - u[1]) > 0, (v[0]*a + b - v[1]) > 0,\
+                            (x[0]*c + d - x[1]) > 0, (y[0]*c + d - y[1]) > 0)
                     return True
 
         return False
 
 import sys
 exec(sys.stdin.read())
+
+# a = Triangle((0,0), (1,2), (2,1))
+# b = Triangle((1,2), (0,3), (2,4))
+# print(a&b)
