@@ -12,7 +12,7 @@ for i in set(list(ascii_lowercase) + list( ''.join(item) for item in zip(ascii_l
         setattr(alp, i, i)
     except AttributeError:
         alpword += 1
-""", number = 200000, globals = globals())
+""", number = 20000, globals = globals())
 
 alqt = timeit("""
 alqword = 0
@@ -21,6 +21,6 @@ for i in set(list(ascii_lowercase) + list( ''.join(item) for item in zip(ascii_l
         setattr(alq, i, i)
     except AttributeError:
         alqword += 1
-""", number = 200000, globals = globals())
+""", number = 20000, globals = globals())
 
 print(alpt < alqt)

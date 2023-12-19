@@ -10,7 +10,7 @@ for i in (ascii_letters + digits):
         alp = Alpha(**{i: i})
     except AttributeError:
         pass
-""", number = 100000, globals = globals())
+""", number = 1000, globals = globals())
 
 alqt = timeit("""
 for i in (ascii_letters + digits):
@@ -18,6 +18,6 @@ for i in (ascii_letters + digits):
         alq = AlphaQ(**{i: i})
     except AttributeError:
         pass
-""", number = 100000, globals = globals())
+""", number = 1000, globals = globals())
 
 print(alpt < alqt)
