@@ -56,7 +56,3 @@ class Triangle:
 
 import sys
 exec(sys.stdin.read())
-
-# a = Triangle((0,0), (1,2), (2,1))
-# b = Triangle((1,2), (0,3), (2,4))
-# print(a&b)
